@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #00274C; /* University of Michigan blue */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .property-info {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #property-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .property-info h2, .property-info p {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    #property-price {
+      font-size: 1.2em;
+      color: #0066CC; /* Price stands out */
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #FFCB05; /* University of Michigan maize */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #e0a800;
+    }
+
+    @media (max-width: 768px) {
+      .property-info {
+        padding: 10px;
+      }
+
+      #property-header {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="property-header"></h1>
+  </header>
+
+  <div class="property-info">
+    <img id="property-image" src="" alt="Property Image">
+    <h2 id="property-price"></h2>
+    <p id="property-beds"></p>
+    <p id="property-baths"></p>
+    <p id="property-description"></p>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    // Function to parse URL parameters
+    function getUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        title: params.get('title'),
+        price: params.get('price'),
+        beds: params.get('beds'),
+        baths: params.get('baths'),
+        img: params.get('img'),
+        description: params.get('description')
+      };
+    }
+
+    // Function to populate property details
+    function loadPropertyDetails() {
+      const params = getUrlParams();
+
+      if (params.title) {
+        document.getElementById('property-header').textContent = params.title;
+        document.getElementById('property-price').textContent = `Price: $${params.price}/month`;
+        document.getElementById('property-beds').textContent = `Bedrooms: ${params.beds}`;
+        document.getElementById('property-baths').textContent = `Bathrooms: ${params.baths}`;
+        document.getElementById('property-description').textContent = params.description;
+        document.getElementById('property-image').src = params.img;
+        document.getElementById('property-image').alt = params.title;
+      } else {
+        console.log("Error: Parameters are missing or incorrectly formatted.");
+      }
+    }
+
+    // Function to go back to the listings page
+    function goBack() {
+      window.history.back();
+    }
+
+    // Load property details on page load
+    window.onload = loadPropertyDetails;
+  </script>
+</body>
+</html>
