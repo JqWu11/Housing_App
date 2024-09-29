@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHousr - UMich Housing Finder</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    afsdsad
+  <header>
+    <img src="https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/Block_M-Hex.png" alt="University of Michigan Block M Logo" id="logo">
+    <h1>Welcome to MHousr</h1>
+  </header>
+
+  <section class="intro">
+    <p>Your one-stop solution to find housing near the University of Michigan!</p>
+    <input type="text" id="searchInput" placeholder="Search for housing...">
+    <button id="searchBtn">Search</button>
+  </section>
+
+  <!-- Example Housing Listings -->
+  <section class="listings">
+    <div class="listing-box">
+      <a href="property-details.html">
+        <h2 class="listing-title">123 Main St, Ann Arbor, MI</h2>
+        <img src="https://images1.apartments.com/i2/zxlRM-Pd0yKP2mB-4zTCw26ArWhVCfVKDZrkN0gdNxw/111/the-courtyards-apartments-ann-arbor-mi-courtyard-student-apartments.jpg" alt="House 1" class="listing-img">
+        <div class="listing-info">
+          <h3>$1200/month</h3>
+          <p>2 beds, 1 bath</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="listing-box">
+      <a href="property-details.html">
+        <h2 class="listing-title">456 Oak Dr, Ann Arbor, MI</h2>
+        <img src="https://via.placeholder.com/600x400" alt="House 2" class="listing-img">
+        <div class="listing-info">
+          <h3>$1500/month</h3>
+          <p>3 beds, 2 baths</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 MHousr</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
