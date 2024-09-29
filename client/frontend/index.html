@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHousr - UMich Housing Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/Block_M-Hex.png" alt="University of Michigan Block M Logo" id="logo">
+    <h1>Welcome to MHousr</h1>
+  </header>
+
+  <section class="intro">
+    <p>Your one-stop solution to find housing near the University of Michigan!</p>
+    <input type="text" id="searchInput" placeholder="Search for housing...">
+    <button id="searchBtn">Search</button>
+
+    <!-- Filters -->
+    <div class="filters">
+      <label for="priceFilter">Price:</label>
+      <select id="priceFilter">
+        <option value="all">All</option>
+        <option value="1000">Below $1000</option>
+        <option value="1500">Below $1500</option>
+        <option value="2000">Below $2000</option>
+      </select>
+
+      <label for="bedFilter">Bedrooms:</label>
+      <select id="bedFilter">
+        <option value="all">All</option>
+        <option value="1">1+ Beds</option>
+        <option value="2">2+ Beds</option>
+        <option value="3">3+ Beds</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Dynamic Listings Section -->
+  <section class="listings" id="listings">
+    <!-- Listings will be generated here by JavaScript -->
+  </section>
+
+  <footer>
+    <p>&copy; 2024 MHousr</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
